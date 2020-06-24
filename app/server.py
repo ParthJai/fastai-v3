@@ -9,8 +9,8 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://www.googleapis.com/drive/v3/files/1OA50CM8gqHlnfM3Nrn91fe1EE9oWDlVq?alt=media&key=AIzaSyBoQFki3AyllwJFNQgmr0eGUL0EeyKCAfg'
-export_file_name = 'export-res50.pkl'
+export_file_url = 'https://drive.google.com/uc?export=download&id=17Prdkapr51ByrOcUq6OiEPIcGwJ8yR-u'
+export_file_name = 'dataset-resized.pkl'
 
 classes = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
 path = Path(__file__).parent
