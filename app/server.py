@@ -63,7 +63,7 @@ async def analyze(request):
     prediction = learn.predict(img)
     accuracy = prediction[2]
     prediction = prediction[0]
-    return JSONResponse({'result': str(prediction),{'accuracy': str(accuracy)})
+    return JSONResponse({'result': str(prediction),'accuracy': str(accuracy)})
 
 
 if __name__ == '__main__':
