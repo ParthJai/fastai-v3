@@ -67,8 +67,7 @@ async def analyze(request):
     paper = prediction[2][3].item()*100
     plastic = prediction[2][4].item()*100
     trash = prediction[2][0].item()*100
-    prediction = prediction[0]
-    return JSONResponse({'result': str(prediction),'cardboard': str(cardboard),'glass': str(glass),'metal':str(metal),'paper':str(paper),'plastic':str(plastic),'trash':str(trash)})
+    return JSONResponse({'cardboard': str(cardboard),'glass': str(glass),'metal':str(metal),'paper':str(paper),'plastic':str(plastic),'trash':str(trash)})
 
 
 if __name__ == '__main__':
