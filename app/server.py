@@ -61,9 +61,14 @@ async def analyze(request):
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)
-    accuracy = prediction[2][0].item()*100
+    cardboard = prediction[2][0].item()*100
+    glass = prediction[2][1].item()*100
+    metal = prediction[2][2].item()*100
+    paper = prediction[2][3].item()*100
+    plastic = prediction[2][4].item()*100
+    trash = prediction[2][0].item()*100
     prediction = prediction[0]
-    return JSONResponse({'result': str(prediction),'accuracy': str(accuracy)})
+    return JSONResponse({'result': str(prediction),'cardboard': str(cardboard),'glass': str(glass),'metal':str(metal),'paper':str(paper),'plastic':str(plastic),'trash':str(trash)})
 
 
 if __name__ == '__main__':
