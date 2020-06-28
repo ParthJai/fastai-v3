@@ -30,7 +30,12 @@ function analyze() {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `Result = ${response["result"]}`;
-      el("accuracy-label").innerHTML = `Accuracy = ${response["accuracy"]}`;
+      el("cardboard-label").innerHTML = `cardboard = ${response["cardboard"]}`;
+      el("glass-label").innerHTML = `glass = ${response["glass"]}`;
+      el("metal-label").innerHTML = `metal = ${response["metal"]}`;
+      el("paper-label").innerHTML = `paper = ${response["paper"]}`;
+      el("plastic-label").innerHTML = `plastic = ${response["plastic"]}`;
+      el("trash-label").innerHTML = `trash = ${response["trash"]}`;
     }
     el("analyze-button").innerHTML = "Analyze";
   };
