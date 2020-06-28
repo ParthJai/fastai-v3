@@ -29,7 +29,6 @@ function analyze() {
   xhr.onload = function(e) {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
-      el("result-label").innerHTML = `Result = ${response["result"]}`;
       el("cardboard-label").innerHTML = `cardboard = ${response["cardboard"]}`;
       el("glass-label").innerHTML = `glass = ${response["glass"]}`;
       el("metal-label").innerHTML = `metal = ${response["metal"]}`;
