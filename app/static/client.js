@@ -30,7 +30,7 @@ function analyze() {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `Result = ${response["result"]}`;
-      el("result-label").innerHTML = `Accuracy = ${response["accuracy"]}`;
+      el("accuracy-label").innerHTML = `Accuracy = ${response["accuracy"]}`;
     }
     el("analyze-button").innerHTML = "Analyze";
   };
