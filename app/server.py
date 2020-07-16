@@ -17,7 +17,7 @@ path = Path(__file__).parent
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
-app.mount('/static', StaticFiles(directory='app/static'))
+app.mount('/static', StaticFiles(directory='/home/ubuntu/fastai-v3/app/static'))
 
 
 async def download_file(url, dest):
@@ -66,7 +66,7 @@ async def analyze(request):
     metal = prediction[2][2].item()*100
     paper = prediction[2][3].item()*100
     plastic = prediction[2][4].item()*100
-    trash = prediction[2][0].item()*100
+    trash = prediction[2][5].item()*100
     return JSONResponse({'cardboard': str(cardboard),'glass': str(glass),'metal':str(metal),'paper':str(paper),'plastic':str(plastic),'trash':str(trash)})
 
 

@@ -24,7 +24,7 @@ function analyze() {
   xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
     true);
   xhr.onerror = function() {
-    alert(xhr.responseText);
+    alert("You killed my server! Reload and try a low resolution image.");
   };
   xhr.onload = function(e) {
     if (this.readyState === 4) {
